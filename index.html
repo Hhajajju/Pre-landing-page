@@ -1,53 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-Landing Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Blog Landing Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Roboto', sans-serif; background: #f0f8ff; color:#333; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
 
-        .content {
-            text-align: center;
-        }
+    /* Container */
+    .container { width:90%; max-width:1000px; margin: 100px auto 50px; }
 
-        .button {
-            display: inline-block;
-            padding: 20px 60px; /* Increased padding for larger button */
-            background-color: #f7f500; /* Lemon color */
-            color: black;
-            font-size: 22px; /* Larger font size */
-            text-decoration: none;
-            border-radius: 50px; /* Oval shape */
-            transition: background-color 0.3s ease;
-        }
+    /* Post Card */
+    .post { background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-bottom:50px; transition: transform 0.3s; }
+    .post:hover { transform: translateY(-5px); }
+    .post img { width:100%; height:300px; object-fit:cover; transition: transform 0.3s; }
+    .post:hover img { transform: scale(1.05); }
 
-        .button:hover {
-            background-color: #e4e400; /* Slightly darker lemon */
-        }
+    .post-content { padding:30px; }
+    .post-title { font-size:2rem; color:#ff4081; margin-bottom:10px; animation: fadeInDown 1s ease; }
+    .post-subtitle { font-size:1.2rem; color:#2575fc; margin-bottom:15px; animation: fadeInDown 1.2s ease; }
+    .post-text { font-size:1rem; margin-bottom:20px; animation: fadeInUp 1s ease; }
 
-        /* Optional: Style for the hidden link (ensure it's not visible but clickable) */
-        .hidden-link {
-            display: none;
-        }
-    </style>
+    .post-button { background:#ff4081; color:#fff; padding:12px 25px; border:none; border-radius:25px; cursor:pointer; font-size:1rem; transition:0.3s; animation: fadeInUp 1.2s ease; }
+    .post-button:hover { background:#e73370; }
+
+    .read-more { display:inline-block; margin-left:15px; color:#2575fc; font-weight:500; cursor:pointer; animation: fadeInUp 1.4s ease; }
+
+    /* Animations */
+    @keyframes fadeInDown { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+    /* Responsive */
+    @media(max-width:768px){
+        .post-title { font-size:1.5rem; }
+        .post-subtitle { font-size:1rem; }
+        .post img { height:200px; }
+    }
+</style>
 </head>
 <body>
 
-    <div class="content">
-        <a href="https://unnatural-poem.com/RDWxQl" class="button" target="_blank">Click here to read more</a>
+<div class="container">
+    <!-- Post 1 -->
+    <div class="post">
+        <!-- Replace the src with your own image -->
+        <img src="your-image-1.jpg" alt="Post Image">
+        <div class="post-content">
+            <h2 class="post-title">Amazing Nature</h2>
+            <h3 class="post-subtitle">Exploring the beauty around us</h3>
+            <p class="post-text">Nature has an incredible way of inspiring us, offering peace, adventure, and endless beauty. Let's explore some amazing landscapes and scenic wonders from around the world...</p>
+            <a href="https://unipretty.com" target="_blank"><button class="post-button">Discover</button></a>
+            <a href="https://unipretty.com" target="_blank" class="read-more">Read More</a>
+        </div>
     </div>
+
+    <!-- Post 2 -->
+    <div class="post">
+        <!-- Replace the src with your own image -->
+        <img src="your-image-2.jpg" alt="Post Image">
+        <div class="post-content">
+            <h2 class="post-title">Tech Innovations</h2>
+            <h3 class="post-subtitle">Shaping the future</h3>
+            <p class="post-text">Technology is evolving rapidly, bringing exciting opportunities and challenges. From AI breakthroughs to cutting-edge software, let's dive into the latest tech innovations changing the world...</p>
+            <a href="https://unipretty.com" target="_blank"><button class="post-button">Explore</button></a>
+            <a href="https://unipretty.com" target="_blank" class="read-more">Read More</a>
+        </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="post">
+        <!-- Replace the src with your own image -->
+        <img src="your-image-3.jpg" alt="Post Image">
+        <div class="post-content">
+            <h2 class="post-title">Travel Adventures</h2>
+            <h3 class="post-subtitle">Journey to amazing destinations</h3>
+            <p class="post-text">Traveling opens the mind, enriches the soul, and provides unforgettable experiences. Join us on adventures to stunning destinations and hidden gems across the globe...</p>
+            <a href="https://unipretty.com" target="_blank"><button class="post-button">Join Us</button></a>
+            <a href="https://unipretty.com" target="_blank" class="read-more">Read More</a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
